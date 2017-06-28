@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Block &amp; Focus</title>
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  <style>
+    html, body {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+    }
+  </style>
+
+  <script>
+    (function () {
+      var savedSessionStorage = window.sessionStorage || {};
+      var redirect = savedSessionStorage.redirect;
+      delete savedSessionStorage.redirect;
+      if (redirect && redirect != location.href && history) {
+        history.replaceState(null, null, redirect);
+      }
+      if (document.location.hostname == 'felipethome.github.io') {
+        // savedSessionStorage.basename = '/block-and-focus';
+        savedSessionStorage.basename = '/';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="scripts/vendors.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
