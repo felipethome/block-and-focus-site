@@ -12,6 +12,7 @@ export default class BannerScreen extends React.Component {
       container: {
         display: 'flex',
         justifyContent: 'center',
+        position: 'relative',
         marginTop: '10px',
         width: '50%',
         textAlign: 'center',
@@ -19,13 +20,17 @@ export default class BannerScreen extends React.Component {
       },
 
       imageContainer: {
-        width: '80%',
+        position: 'absolute',
+        top: '0',
+        bottom: '0',
+        width: '70%',
         minWidth: '454px',
-        maxHeight: '454px',
+        maxHeight: '600px',
         overflow: 'hidden',
       },
 
       image: {
+        display: 'flex',
         width: '100%',
         height: 'auto',
       },

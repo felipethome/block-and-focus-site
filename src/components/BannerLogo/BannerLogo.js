@@ -52,7 +52,7 @@ class Logo extends React.Component {
       button: {
         background: '#43A047',
         boxShadow: getShadow('2dp'),
-        fontSize: '20px',
+        fontSize: '18px',
         textTransform: 'none',
         height: 'auto',
         marginTop: '10px',

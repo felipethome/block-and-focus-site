@@ -52,7 +52,7 @@ export default class Button extends React.Component {
         whiteSpace: 'nowrap',
         flexShrink: '0',
         minWidth: '-webkit-min-content',
-        minHeight: '25px',
+        minHeight: '20px',
         background: 'rgba(255,255,255,0.2)',
         border: 'none',
         borderRadius: '2px',
