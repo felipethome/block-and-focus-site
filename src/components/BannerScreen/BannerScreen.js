@@ -1,18 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Transition from 'react-inline-transition-group';
 
 export default class BannerScreen extends React.Component {
+  static propTypes = {
+    style: PropTypes.object,
+  };
+
   render() {
     const styles = {
       container: {
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '10px',
         width: '50%',
         textAlign: 'center',
         background: '#212121',
       },
 
-      image: {
+      imageContainer: {
         width: '80%',
         minWidth: '454px',
+        maxHeight: '454px',
+        overflow: 'hidden',
+      },
+
+      image: {
+        width: '100%',
+        height: 'auto',
       },
 
       base: {
@@ -28,7 +43,9 @@ export default class BannerScreen extends React.Component {
     };
 
     const children = [
-      <img key="1" style={styles.image} src="img/options.png" />,
+      <div key="1" style={styles.imageContainer}>
+        <img style={styles.image} src="img/options.png" />
+      </div>,
     ];
 
     return (

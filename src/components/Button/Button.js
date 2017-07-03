@@ -7,6 +7,7 @@ export default class Button extends React.Component {
   static propTypes = {
     animate: PropTypes.bool,
     children: PropTypes.any,
+    disabled: PropTypes.bool,
     link: PropTypes.bool,
     onMouseDown: PropTypes.func,
     onMouseUp: PropTypes.func,
@@ -48,6 +49,10 @@ export default class Button extends React.Component {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        whiteSpace: 'nowrap',
+        flexShrink: '0',
+        minWidth: '-webkit-min-content',
+        minHeight: '25px',
         background: 'rgba(255,255,255,0.2)',
         border: 'none',
         borderRadius: '2px',
@@ -66,14 +71,29 @@ export default class Button extends React.Component {
       buttonMouseDown: {
         boxShadow: '0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24)',
       },
+
+      buttonDisabled: {},
     };
 
-    const buttonStyle = Object.assign(
-      {},
-      styles.button,
-      this.props.animate && this.state.mouseDown && styles.buttonMouseDown,
-      this.props.style
-    );
+    let buttonStyle;
+
+    if (!this.props.disabled) {
+      buttonStyle = Object.assign(
+        {},
+        styles.button,
+        this.props.animate && this.state.mouseDown && styles.buttonMouseDown,
+        this.props.style
+      );
+    }
+    else {
+      buttonStyle = Object.assign(
+        {},
+        styles.button,
+        styles.buttonDisabled,
+        this.props.style
+      );
+    }
+
 
     let elem;
 

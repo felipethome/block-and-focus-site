@@ -16,6 +16,7 @@ class Logo extends React.Component {
         justifyContent: 'center',
         alignItems: 'center',
         width: '50%',
+        minWidth: '450px',
         background: '#212121',
         padding: '20px 0',
       },
@@ -43,8 +44,9 @@ class Logo extends React.Component {
       buttonContainer: {
         display: 'flex',
         justifyContent: 'center',
+        flexWrap: 'wrap',
         width: '100%',
-        marginTop: '30px',
+        marginTop: '20px',
       },
 
       button: {
@@ -53,12 +55,20 @@ class Logo extends React.Component {
         fontSize: '20px',
         textTransform: 'none',
         height: 'auto',
+        marginTop: '10px',
         marginRight: '10px',
+      },
+
+      buttonDisabled: {
+        boxShadow: 'none',
+        background: '#CCC',
+        color: '#212121',
       },
 
       warning: {
         marginTop: '10px',
         color: '#CCC',
+        textAlign: 'center',
       },
     };
 
@@ -80,9 +90,10 @@ class Logo extends React.Component {
             Get Free Version
           </Button>
           <Button
+            disabled
             link
             href="#"
-            style={styles.button}
+            style={Object.assign({}, styles.button, styles.buttonDisabled)}
           >
             Buy on Chrome Store
           </Button>
