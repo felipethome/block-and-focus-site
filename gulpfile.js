@@ -112,7 +112,7 @@ var cssTask = function (options) {
 };
 
 gulp.task('ghpages', ['deploy'], function () {
-  return gulp.src('./demo/deploy/**/*')
+  return gulp.src('./build/**/*')
     .pipe(ghPages());
 });
 
@@ -122,21 +122,21 @@ gulp.task('deploy', function () {
   var browserifyDepsOpt = {
     development: false,
     src: files.dependencies,
-    dest: './dist/scripts',
+    dest: './build/scripts',
     output: 'vendors.js',
   };
 
   var browserifyOpt = {
     development: false,
     src: files.browserify,
-    dest: './dist/scripts',
+    dest: './build/scripts',
     output: 'app.js',
   };
 
   var cssOpt = {
     development: false,
     src: files.css,
-    dest: './dist/styles',
+    dest: './build/styles',
     output: 'styles.css',
   };
 

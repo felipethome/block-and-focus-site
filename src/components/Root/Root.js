@@ -26,12 +26,16 @@ export default class Root extends React.Component {
       stripe: {
         background: '#F5F5F5',
       },
+
+      link: {
+        textDecoration: 'none',
+      },
     };
 
     const basename = (sessionStorage || {}).basename;
 
     const navbarActions = [
-      <Link key="/home" to="/home" style={styles.link}>
+      <Link key="/" to="/" style={styles.link}>
         <Button animate style={styles.navbarButton}>Home</Button>
       </Link>,
       <Button
