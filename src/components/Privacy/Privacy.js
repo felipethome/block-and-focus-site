@@ -34,7 +34,7 @@ export default class Privacy extends React.Component {
       >
         <Description title="Block &amp; Focus privacy policy is simple">
           All the data this extension may collect is kept in the user's machine, with the exception of configuration information that may be exchanged between the user's machine and Google's servers so you can use the same settings in different devices.
-          You allow this extension to keep your information in your own machine for an indeterminate amount of time.
+          This extension may keep your information in your own machine for an indeterminate amount of time.
         </Description>
       </div>
     );

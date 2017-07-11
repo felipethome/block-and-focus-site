@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import StatsScreen from '../StatsScreen';
 import Description from '../description';
 
 export default class Stats extends React.Component {
+  static propTypes = {
+    style: PropTypes.object,
+  };
+
   render() {
     const styles = {
       container: {
@@ -21,7 +26,7 @@ export default class Stats extends React.Component {
       <div style={Object.assign({}, styles.container, this.props.style)}>
         <Description
           title="Statistics (Only Pro)"
-          text="The statistics page has a lot of information about your cycles so you can track your evolution. You can check which blocked sites you access the most, how long you have worked, rested and more."
+          text="The statistics page has usage information of the extension. You can check which blocked sites you access the most, how long you have worked, rested and more."
         />
         <StatsScreen />
       </div>
