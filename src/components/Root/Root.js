@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Navbar from '../Navbar';
 import Button from '../Button';
 import Home from '../Home';
+import ConfirmationPage from '../ConfirmationPage';
 
 const supportsHistory = 'pushState' in window.history;
 
@@ -16,6 +17,7 @@ export default class Root extends React.Component {
     const styles = {
       container: {
         width: '100%',
+        height: '100%',
       },
 
       navbarButton: {
@@ -41,7 +43,7 @@ export default class Root extends React.Component {
       <Button
         link
         animate
-        href="#privacy"
+        href="/home#privacy"
         key="/privacy"
         style={styles.navbarButton}
       >
@@ -50,7 +52,7 @@ export default class Root extends React.Component {
       <Button
         link
         animate
-        href="#support"
+        href="/home#support"
         key="/support"
         style={styles.navbarButton}
       >
@@ -70,8 +72,9 @@ export default class Root extends React.Component {
             hasShadow
           />
 
-          <Route exact path="/" component={Home}/>
-          <Route path="/home" component={Home}/>
+          <Route exact path="/" component={Home} />
+          <Route path="/home" component={Home} />
+          <Route path="/confirmation" component={ConfirmationPage} />
         </div>
       </Router>
     );

@@ -25,7 +25,7 @@ export default class Stats extends React.Component {
     return (
       <div style={Object.assign({}, styles.container, this.props.style)}>
         <Description
-          title="Statistics (Only Pro)"
+          title="Statistics (Paid feature)"
           text="The statistics page has usage information of the extension. You can check which blocked sites you access the most, how long you have worked, rested and more."
         />
         <StatsScreen />
