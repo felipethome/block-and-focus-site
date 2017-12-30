@@ -20,6 +20,12 @@ export default class Support extends React.Component {
         width: '100%',
         padding: '40px 0 40px 0',
       },
+
+      link: {
+        color: '#000',
+        textDecoration: 'none',
+        marginLeft: '5px',
+      },
     };
 
     const {
@@ -34,7 +40,9 @@ export default class Support extends React.Component {
       >
         <Description title="Support">
           If you have any question you can send a message to:
-          contact@blockandfocus.com
+          <a href="mailto:contact@blockandfocus.com" style={styles.link}>
+            contact@blockandfocus.com
+          </a>
         </Description>
       </div>
     );
