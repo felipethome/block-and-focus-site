@@ -1,11 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Transition from 'react-inline-transition-group';
+import CancelablePromise from '../../CancelablePromise';
+
+const imagePaths = [
+  'img/options.png',
+];
 
 export default class BannerScreen extends React.Component {
   static propTypes = {
     style: PropTypes.object,
   };
+
+  state = {
+    show: false,
+  };
+
+  componentDidMount() {
+    this._Cancelable = new CancelablePromise();
+
+    // Load images before the animation so they are stored in the HTTP cache.
+    const promises = imagePaths.map((src) => {
+      return this._Cancelable.make(new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = reject;
+      }));
+    });
+
+    Promise.all(promises).then(() => {
+      this.setState(() => ({show: true}));
+    });
+  }
+
+  componentWillUnmount() {
+    this._Cancelable.cancel();
+  }
 
   render() {
     const styles = {
@@ -37,21 +68,25 @@ export default class BannerScreen extends React.Component {
 
       base: {
         opacity: 0,
-        transform: 'scale(0)',
+        transform: 'translateY(100%)',
       },
 
       appear: {
         opacity: 1,
-        transform: 'scale(1)',
-        transition: 'transform 500ms, opacity 1200ms ease-in',
+        transform: 'translateY(0%)',
+        transition: 'transform 500ms, opacity 800ms ease-in',
       },
     };
 
-    const children = [
-      <div key="1" style={styles.imageContainer}>
-        <img style={styles.image} src="img/options.png" />
-      </div>,
-    ];
+    let children = [];
+
+    if (this.state.show) {
+      children = [
+        <div key="1" style={styles.imageContainer}>
+          <img style={styles.image} src="img/options.png" />
+        </div>,
+      ];
+    }
 
     return (
       <Transition
