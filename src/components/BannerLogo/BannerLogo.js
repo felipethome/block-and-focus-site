@@ -87,20 +87,10 @@ class Logo extends React.Component {
             href="https://chrome.google.com/webstore/detail/block-focus/dcpbedhdekgkhigjgmlcbmcjoeaebbfm"
             style={styles.button}
           >
-            Get Free Version
-          </Button>
-          <Button
-            disabled
-            link
-            href="#"
-            style={Object.assign({}, styles.button, styles.buttonDisabled)}
-          >
-            Buy on Chrome Store
+            Get it on Chrome Store
           </Button>
         </div>
-        <div style={styles.warning}>
-          The free version doesn't contain some of the features presented here
-        </div>
+
       </div>
     );
   }
