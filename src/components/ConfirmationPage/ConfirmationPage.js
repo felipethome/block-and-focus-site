@@ -14,6 +14,10 @@ export default class ConfirmationPage extends React.Component {
     window.postMessage({
       type: 'B&F',
       tx: searchParams.get('tx'),
+      amt: searchParams.get('amt'),
+      cc: searchParams.get('cc'),
+      itemName: searchParams.get('item_name'),
+      st: searchParams.get('st'),
     }, '*');
   }
 
