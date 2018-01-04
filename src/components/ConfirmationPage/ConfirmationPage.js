@@ -5,6 +5,18 @@ import getShadow from '../getShadow';
 export default class ConfirmationPage extends React.Component {
   static displayName = 'ConfirmationPage';
 
+  componentWillMount() {
+    if (!window.URLSearchParams) return;
+
+    const paramsString = window.location.search;
+    const searchParams = new URLSearchParams(paramsString);
+
+    window.postMessage({
+      type: 'B&F',
+      tx: searchParams.get('tx'),
+    }, '*');
+  }
+
   render() {
     const styles = {
       container: {
