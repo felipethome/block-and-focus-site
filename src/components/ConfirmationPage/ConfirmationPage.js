@@ -11,14 +11,16 @@ export default class ConfirmationPage extends React.Component {
     const paramsString = window.location.search;
     const searchParams = new URLSearchParams(paramsString);
 
-    window.postMessage({
-      type: 'B&F',
-      tx: searchParams.get('tx'),
-      amt: searchParams.get('amt'),
-      cc: searchParams.get('cc'),
-      itemName: searchParams.get('item_name'),
-      st: searchParams.get('st'),
-    }, '*');
+    if (searchParams.get('tx')) {
+      window.postMessage({
+        type: 'B&F',
+        tx: searchParams.get('tx'),
+        amt: searchParams.get('amt'),
+        cc: searchParams.get('cc'),
+        itemName: searchParams.get('item_name'),
+        st: searchParams.get('st'),
+      }, '*');
+    }
   }
 
   render() {
