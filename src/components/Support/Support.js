@@ -40,8 +40,8 @@ export default class Support extends React.Component {
       >
         <Description title="Support">
           If you have any question you can send a message to:
-          <a href="mailto:contact@blockandfocus.com" style={styles.link}>
-            contact@blockandfocus.com
+          <a href="mailto:support@blockandfocus.com" style={styles.link}>
+            support@blockandfocus.com
           </a>
         </Description>
       </div>
