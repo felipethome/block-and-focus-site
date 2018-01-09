@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Navbar from '../Navbar';
 import Button from '../Button';
 import Home from '../Home';
-import ConfirmationPage from '../ConfirmationPage';
 
 const supportsHistory = 'pushState' in window.history;
 
@@ -74,7 +73,6 @@ export default class Root extends React.Component {
 
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />
-          <Route path="/confirmation" component={ConfirmationPage} />
         </div>
       </Router>
     );
