@@ -1,7 +1,8 @@
 var img = document.getElementById('heroImg');
+var inner = document.getElementById('heroInner');
 
 function showHero() {
-  img.classList.add('visible');
+  inner.classList.add('visible');
 }
 
 if (img.complete) {

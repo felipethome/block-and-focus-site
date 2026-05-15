@@ -108,29 +108,35 @@ html, body {
 }
 
 .hero-screen {
+  position: relative;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   width: 50%;
   min-width: 320px;
   background: #212121;
-  overflow: hidden;
 }
 
-.hero-img {
+.hero-screen-inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   width: 70%;
   min-width: 260px;
-  max-height: 600px;
-  height: auto;
-  object-fit: contain;
+  overflow: hidden;
   opacity: 0;
   transform: translateY(100%);
   transition: transform 500ms ease-out, opacity 800ms ease-in;
 }
 
-.hero-img.visible {
+.hero-screen-inner.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ── Feature sections ────────────────────────────────────── */
