@@ -10,8 +10,8 @@
   },
   "homepage": "https://blockandfocus.com",
   "scripts": {
-    "dev": "npx serve build",
-    "deploy": "gh-pages -d build"
+    "dev": "npx serve src",
+    "deploy": "gh-pages -d src"
   },
   "devDependencies": {
     "gh-pages": "^6.0.0"
