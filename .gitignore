@@ -2,6 +2,8 @@ node_modules
 bower_components
 build/*
 !build/index.html
+!build/styles/
+!build/scripts/
 dist
 *.log
 .DS_Store
