@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Block &amp; Focus</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
@@ -11,40 +12,103 @@
   <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="./favicons/favicon.ico">
   <meta name="msapplication-config" content="./favicons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#212121">
 
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
-
-  <style>
-    html, body {
-      margin: 0;
-      font-family: "Roboto", sans-serif;
-      height: 100%;
-    }
-
-    .root {
-      height: 100%;
-    }
-  </style>
-
-  <script>
-    (function () {
-      var savedSessionStorage = window.sessionStorage || {};
-      var redirect = savedSessionStorage.redirect;
-      delete savedSessionStorage.redirect;
-      if (redirect && redirect != location.href && history) {
-        history.replaceState(null, null, redirect);
-      }
-      if (document.location.hostname == 'felipethome.github.io') {
-        savedSessionStorage.basename = '/block-and-focus-site';
-      }
-    })();
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-  <div id="root" class="root"></div>
 
-  <script src="scripts/vendors.js"></script>
-  <script src="scripts/app.js"></script>
+  <nav class="navbar">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#privacy" class="nav-link">Privacy</a>
+    <a href="#support" class="nav-link">Support</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-logo">
+      <img src="img/logo.png" alt="Block &amp; Focus" class="logo-img">
+      <h1 class="logo-title">Block &amp; Focus</h1>
+      <p class="logo-subtitle">Block distractions during your work time</p>
+      <a
+        href="https://chrome.google.com/webstore/detail/block-focus/dcpbedhdekgkhigjgmlcbmcjoeaebbfm"
+        class="btn-cta"
+      >
+        Get it on Chrome Store
+      </a>
+    </div>
+    <div class="hero-screen">
+      <div class="hero-screen-inner" id="heroInner">
+        <img src="img/options.png" alt="Options screen" class="hero-img" id="heroImg">
+      </div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <h2 class="feature-title">Positive reinforcement</h2>
+    <p class="feature-text">
+      When trying to access a blocked website you will see a motivational
+      phrase to inspire you.
+    </p>
+    <img src="img/quote.png" alt="Motivational quote screen" class="feature-img">
+  </section>
+
+  <section class="feature stripe">
+    <h2 class="feature-title">Statistics</h2>
+    <p class="feature-text">
+      The statistics page has usage information of the extension. You can check
+      which blocked sites you access the most, how long you have worked, rested
+      and more.
+    </p>
+    <img src="img/stats.png" alt="Statistics screen" class="feature-img">
+  </section>
+
+  <section class="feature">
+    <h2 class="feature-title">Options</h2>
+    <p class="feature-text">
+      You can configure the websites you don&#8217;t want to access during work
+      (and exceptions to these websites), the time you want to work and the
+      time you want to rest.
+    </p>
+    <img src="img/options2.png" alt="Options screen" class="feature-img">
+  </section>
+
+  <section class="feature stripe">
+    <h2 class="feature-title">And more options&hellip;</h2>
+    <p class="feature-text">
+      You will have a lot of options so you can configure the extension the way
+      that best fits you. Notifications, sound, difficulty and more.
+    </p>
+    <img src="img/more-options.png" alt="More options screen" class="feature-img">
+  </section>
+
+  <section class="text-section" id="privacy">
+    <h2 class="feature-title">Block &amp; Focus privacy policy is simple</h2>
+    <p class="feature-text">
+      All the data this extension may collect is kept in the user&#8217;s
+      machine, with the exception of configuration information that may be
+      exchanged between the user&#8217;s machine and Google&#8217;s servers so
+      you can use the same settings in different devices. This extension may
+      keep your information in your own machine for an indeterminate amount of
+      time.
+    </p>
+  </section>
+
+  <section class="text-section stripe" id="support">
+    <h2 class="feature-title">Support</h2>
+    <p class="feature-text">
+      If you have any question you can send a message to:
+      <a href="mailto:support@blockandfocus.com" class="support-link">
+        support@blockandfocus.com
+      </a>
+    </p>
+  </section>
+
+  <footer class="footer">
+    <p>Copyright &copy; 2017 Felipe Thom&eacute;. All rights reserved.</p>
+  </footer>
+
+  <script src="./scripts/main.js"></script>
 </body>
 </html>
