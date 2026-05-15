@@ -186,10 +186,6 @@ html, body {
   width: 72%;
   max-width: 860px;
   height: auto;
-  border-radius: 6px;
-  box-shadow:
-    0 4px 6px rgba(0,0,0,.06),
-    0 12px 36px rgba(0,0,0,.12);
 }
 
 /* ── Support link ────────────────────────────────────────── */
