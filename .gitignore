@@ -7,5 +7,6 @@ src/*
 dist
 *.log
 .DS_Store
+.claude/
 filed
 .publish
