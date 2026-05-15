@@ -1,0 +1,14 @@
+node_modules
+bower_components
+src/*
+!src/index.html
+!src/styles/
+!src/scripts/
+!src/img/
+!src/favicons/
+dist
+*.log
+.DS_Store
+.claude/
+filed
+.publish
