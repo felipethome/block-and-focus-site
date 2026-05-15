@@ -16,8 +16,6 @@ npm run dev      # start local server at http://localhost:3000
 npm run deploy   # pushes src/ to the gh-pages branch
 ```
 
-Images and favicons are not tracked in this repo. They live on the `gh-pages` branch and must be present in `src/img/` and `src/favicons/` locally before deploying.
-
 ## Copyright
 
 Copyright © 2017–2026 Felipe Thomé. All rights reserved.

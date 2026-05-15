@@ -4,6 +4,8 @@ src/*
 !src/index.html
 !src/styles/
 !src/scripts/
+!src/img/
+!src/favicons/
 dist
 *.log
 .DS_Store
